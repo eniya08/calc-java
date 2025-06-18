@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class Cal {
+    public void animal(String ani) {
+        System.out.println("They are good");
+    }
+    public void play() {
+        System.out.println("They are playing");
+    }
+}
+class Dog extends Cal {
+    public void play() {
+        System.out.println("Dogs are playing");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Cal c = new Cal();
+        c.animal("Any");
+        c.play();
+        Dog d = new Dog();
+        d.animal("Dog");
+        d.play();
+    }
+}
