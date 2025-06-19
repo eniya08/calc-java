@@ -1,0 +1,33 @@
+interface Insurance {
+    double calculatePremium();
+    void displayDetails();
+}
+
+class LifeInsurance implements Insurance {
+    private String policyHolderName;
+    private double insuredAmount;
+
+    public LifeInsurance(String name, double amount) {
+        this.policyHolderName = name;
+        this.insuredAmount = amount;
+    }
+
+    @Override
+    public double calculatePremium() {
+        return insuredAmount * 0.05; 
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("Policy Holder: " + policyHolderName);
+        System.out.println("Insured Amount: ₹" + insuredAmount);
+        System.out.println("Premium: ₹" + calculatePremium());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Insurance policy = new LifeInsurance("Ravi Kumar", 100000);
+        policy.displayDetails();
+    }
+}
