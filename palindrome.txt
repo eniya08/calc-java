@@ -1,0 +1,30 @@
+public class Main {
+
+    // Function to check if a string is a palindrome
+    public static boolean isPalindrome(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+
+        // Compare characters from both ends
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false; // Not a palindrome
+            }
+            left++;
+            right--;
+        }
+
+        return true; // All matched
+    }
+
+    // Main method to test the function
+    public static void main(String[] args) {
+        String word = "madam";
+
+        if (isPalindrome(word)) {
+            System.out.println(word + " is a palindrome.");
+        } else {
+            System.out.println(word + " is not a palindrome.");
+        }
+    }
+}
