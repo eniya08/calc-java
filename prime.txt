@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+class RemovePrimes {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+        numbers.add(9);
+        numbers.add(10);
+
+        // Remove prime numbers
+        Iterator<Integer> iterator = numbers.iterator();
+        while (iterator.hasNext()) {
+            int num = iterator.next();
+            if (isPrime(num)) {
+                iterator.remove();
+            }
+        }
+
+        System.out.println("After removing primes: " + numbers);
+    }
+
+    public static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        if (n == 2) return true;
+        if (n % 2 == 0) return false;
+        for (int i = 3; i <= Math.sqrt(n); i += 2) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+}
